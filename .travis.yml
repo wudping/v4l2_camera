@@ -6,11 +6,11 @@ os: linux
 
 env:
   global:
-  - secure: RO6Km2oZnY/Z97E9hcACIoiGpOEneJhGemr2eFp9XyIjFmnMnGtGPAEKsNrI4mVKQBeVmA00BPi5T6Hu53bhuELOL6G/EFdaJJPM3y78WUnrCMaThI8v7TkXqPSPYB8S7pB8eYGa/nSy9WMeMZM2XKLM3xQ2xEaG0+5XMZN0KUyV5oYtvtGukxayBG5s49DisWEU+bEy5z2WEDAX7Ac6Aadyt6rxmge0I8gN6PVS4p5Z1SOjrCvQ5l+7MHUaWtdzuQOZWuZKN0/uJPHQq+E10Re5YDwpYqg1aqtzz6A8DtsnnN3Qa/tZRM0+8aOopjAzo9/rW9hMh5M7izEmI7elX/S0R9vQ0h2n/zQs6A8h4l3u0eHmDCTFBVbXQXajP5G4FYhgvo5I0EaXwjspIS3DiZ+ndf/3ZHk261KGMP+nYUs9fnJng9lDMGkvIaO4OpEHClDmbYtb0/Kjopp+F4QL1pEiiTTBRzBTklZNR00P+DpJp46aQCnCVB2j9WtnVgDejoWF48dxbhImEZqhPN/VK7OuUe8zW2R7TDHohUuevR7aIhgVe2ca8f80YGUYPWCgyU9l+DrGjXbJQTDsG8O8+SpqZr5Nckxocmfs9pxksLl8sltrSS9OWncwLuipsc9o2qBIJjEZjBFnD4NMVdnjxsNfiP+xk9odhAAEbAE8ytE=
+  - secure: XBoDxUAErZg5BNbmuK73bMhlWxM9vKutYjI8sm1kC/dH8Kjr7uS0pPRS8C3/QE3cryS1kmQ7NxPZ6EH0PPLcrzXVhKxvlZZUry1JUPgGXIdAey+ORbW1wztnHSvvRA4yabyqHrVvjQAULqtOh7r3saqiTtsAogoAWMLGjFTo3+4BEpmNzvrO1EpgrIaBmd8rvj1W8M+6DuE1qJuYD+JpFezrt2x4gTjcIO8U6ndJeO4drRKoWb6n3snbmLLwSnu0javoP7T+/VpeCk9k+1FfE5/9JO+439c3BmLzrPljEGS4lBgTmBiPWQVScsMb889JS4+pG+XJ9MLDYPynk9SEh/MzGAyDsnnzISu/MERkVFcq4BpmcTfBSpmf2b72HKJmkcK6D8wvwqcr86XKfUjUaE8hQm5c/jxSwugqM9naNAKyZ2BVRLsY54Fvt9JU23zjqcmVKHKQJ8fKnGSpqZe/BuU5kiYE5D38Vrc2JoIJtTNtdjbSYpg1R39gwij3kj7mqg7oebBcF8vBmQaIoCFKdvSr8B3sVkbuNBIlXfJ4stu+eDfxEsjW+wPGJE62CxXE6vBKaR1EYUrAzFhOCYFGqMXFAAekSBZa9qBieJP70t0YMXdPCMmp9vjNGJguxp3yssRR/ed6DcUao0HWu6xv+5lDQlAGjUfICkS22RPJ9dM= 
 addons:
   coverity_scan:
     project: wudping/v4l2_camera
-      name: travis_test
+      name: v4l2_camera
       description: v4l2 camera
     notification_email: ""
     build_command_prepend: ''
@@ -19,8 +19,5 @@ addons:
 
 #script: if [ "${COVERITY_SCAN_BRANCH}" != 1 ]; then make ; fi
 script: make -j8
-
-after_success:
-  - coveralls --exclude lib --exclude tests --gcov-options '\-lp'
 
 
